@@ -8,9 +8,6 @@ local function announceArrival()
     
     local player = getPlayer()
 
-    print("SHITB")
-    print(type(player))
-
     if player ~= nil and type(player) ~= userdata then
         processGeneralMessage(joined_msg)    
     end
