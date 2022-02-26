@@ -1,0 +1,14 @@
+version=1
+id=2759895539
+title=Server Messages
+description=[h1]What is the purpose of this mod?[/h1]
+description=Sends a message in chat when a player connects to the server and when a player disconnects from a server.
+description=
+description=Message in chat will be sent from the player that is connecting/disconnecting.
+description=
+description=Adds Sandbox vars to enable or disable the join/leave messages.
+description=
+description=Tested on 41.66
+description=
+tags=Build 41;Balance;Multiplayer
+visibility=public
