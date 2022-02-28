@@ -1,16 +1,22 @@
+announced = 0
+
 local joined_msg = "...has joined the server."
 local left_msg = "...has left the server."
 
 local function announceArrival()
-    if not isClient() then return end
-
+    if not isClient() or announced >= 2 then return end
     if not SandboxVars.ServerMessages.EnableAnnounceJoinServer then return end
     
-    local player = getPlayer()
-
-    if player ~= nil and type(player) ~= userdata then
-        processGeneralMessage(joined_msg)    
+    -- first iteration is always too early so skip it
+    if announced == 0 then 
+        announced = announced + 1
+        return
     end
+
+    -- now chat should be ready
+    processGeneralMessage(joined_msg)
+    announced = announced + 1
+    
 end
 
 Events.OnGameTimeLoaded.Add(announceArrival)
